@@ -30,6 +30,9 @@ public class VychodyPane extends VBox implements Observer{
     
     // pridanie názvu východy a následný button pre možné východy
     private void init(){
+        if(hra.konecHry()){
+            main.novaHra();
+        }
         this.getChildren().add(new Label("Vychody"));
         hra.getHerniPlan().getAktualniProstor().getVychody().forEach(item -> {
             Button button;

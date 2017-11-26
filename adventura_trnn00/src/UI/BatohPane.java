@@ -31,6 +31,9 @@ public class BatohPane extends VBox implements Observer{
     
     //* možnost vkládání objektu do batohu a "zaregistrovanie" obrázkov v sekci batohpane
     private void init(){
+        if(hra.konecHry()){
+            main.novaHra();
+        }
         this.getChildren().add(new Label("Batoh"));
         hra.getHerniPlan().getBatoh().getVeci().values().forEach(item -> {
             String resource = "/zdroje/"+item.getJmeno()+".png";

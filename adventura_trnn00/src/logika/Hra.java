@@ -92,6 +92,7 @@ public class Hra implements IHra {
         else {
             textKVypsani="Neviem, čo tým myslíš. Tento príkaz nepoznám. ";
         }
+        herniPlan.notifyAllObservers();
         return textKVypsani;
     }
 

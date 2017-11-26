@@ -32,6 +32,9 @@ public class OkoliPane extends VBox implements Observer{
     
     //veci okolo - veci, ktoré nie su v batohu
     private void init(){
+        if(hra.konecHry()){
+            main.novaHra();
+        }
         this.getChildren().add(new Label("Veci okolo"));
         hra.getHerniPlan().getAktualniProstor().getVeci().values().forEach(item -> {
             String resource = "/zdroje/"+item.getJmeno()+".png";
@@ -45,7 +48,7 @@ public class OkoliPane extends VBox implements Observer{
             this.getChildren().add(button);
         });
    
-    }
+    } 
 //služí na samostatný update
     @Override
     public void update() {
